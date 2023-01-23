@@ -1,0 +1,6 @@
+insert into markak values (NULL,"Audi","Németország","Ingolstadt",1932);
+insert into markak values (NULL,"BMW","Németország","München",1916);
+insert into markak values (NULL,"Mercedes","Németország","Stuttgart",1926);
+insert into markak values (NULL,"Opel","Németország","Rüsselsheim",1862);
+insert into markak values (NULL,"Porsche","Németország","Stuttgart",1931);
+insert into markak values (NULL,"Volkswagen","Németország","Wolfsburg",1937);
