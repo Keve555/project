@@ -2,9 +2,6 @@
     img{
         width: 200px;
     }
-    table{
-        margin-left: 50px;
-    }
 </style>
 <h1>Modell</h1>
 <table>

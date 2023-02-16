@@ -49,3 +49,6 @@ body {
   td{
     border: black solid 1px;
   }
+  table{
+    margin: 0 auto 0 auto;
+  }
