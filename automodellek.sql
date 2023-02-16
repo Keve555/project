@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2023. Feb 02. 10:11
--- Kiszolgáló verziója: 10.4.21-MariaDB
--- PHP verzió: 7.3.30
+-- Létrehozás ideje: 2023. Feb 12. 16:40
+-- Kiszolgáló verziója: 10.4.27-MariaDB
+-- PHP verzió: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,20 +20,18 @@ SET time_zone = "+00:00";
 --
 -- Adatbázis: `automodellek`
 --
-CREATE DATABASE IF NOT EXISTS `automodellek` DEFAULT CHARACTER SET utf8 COLLATE utf8_hungarian_ci;
-USE `automodellek`;
 
 -- --------------------------------------------------------
 
 --
--- Tábla szerkezet ehhez a táblához `felhasznalok`
+-- Tábla szerkezet ehhez a táblához `felhasznalo`
 --
 
-CREATE TABLE `felhasznalok` (
-  `id` int(11) NOT NULL,
-  `nev` int(11) NOT NULL,
-  `email` int(11) NOT NULL,
-  `jelszo` int(11) NOT NULL
+CREATE TABLE `felhasznalo` (
+  `id` int(5) NOT NULL,
+  `nev` varchar(30) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `jelszo` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 -- --------------------------------------------------------
@@ -43,11 +41,11 @@ CREATE TABLE `felhasznalok` (
 --
 
 CREATE TABLE `markak` (
-  `id` int(11) NOT NULL,
-  `nev` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
-  `orszag` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
-  `szekhely` varchar(50) COLLATE utf8_hungarian_ci NOT NULL,
-  `alapitasiev` int(11) NOT NULL
+  `id` int(5) NOT NULL,
+  `nev` varchar(20) NOT NULL,
+  `orszag` varchar(30) NOT NULL,
+  `szekhely` varchar(30) NOT NULL,
+  `alapitasiev` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 --
@@ -102,10 +100,10 @@ INSERT INTO `markak` (`id`, `nev`, `orszag`, `szekhely`, `alapitasiev`) VALUES
 --
 
 CREATE TABLE `modellek` (
-  `id` int(11) NOT NULL,
-  `marka` varchar(30) COLLATE utf8_hungarian_ci NOT NULL,
-  `nev` varchar(30) COLLATE utf8_hungarian_ci NOT NULL,
-  `kategoria` varchar(30) COLLATE utf8_hungarian_ci NOT NULL
+  `id` int(5) NOT NULL,
+  `marka` varchar(30) NOT NULL,
+  `nev` varchar(30) NOT NULL,
+  `kategoria` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 --
@@ -120,7 +118,37 @@ INSERT INTO `modellek` (`id`, `marka`, `nev`, `kategoria`) VALUES
 (5, 'Opel', 'Omega', 'Felső középkategória'),
 (6, 'Opel', 'Agila', 'Microvan'),
 (7, 'Opel', 'Meriva', 'Minivan'),
-(8, 'Opel', 'Zafira', 'Kompaktvan');
+(8, 'Opel', 'Zafira', 'Kompaktvan'),
+(9, 'Opel', 'Tigra', 'Alsó kategória'),
+(10, 'Opel', 'Kadett', 'Alsó középkategória'),
+(11, 'Opel', 'Ascona', 'Középkategória'),
+(12, 'Opel', 'Manta', 'Középkategória'),
+(13, 'Opel', 'Calibra', 'Középkategória'),
+(14, 'Opel', 'Olympia', 'Felső középkategória'),
+(15, 'Opel', 'Record', 'Felső középkategória'),
+(16, 'Opel', 'Commodore', 'Felső középkategória'),
+(17, 'Opel', 'Kapitän', 'Felső kategória'),
+(18, 'Opel', 'Senator', 'Felsőkategória'),
+(19, 'Opel', 'Monza', 'Felsőkategória'),
+(20, 'Opel', 'GT', 'Sportautó'),
+(21, 'Opel', 'Speedster', 'Sportautó'),
+(22, 'Opel', 'Combo', 'Minivan'),
+(23, 'Opel', 'Sintra', 'Van'),
+(24, 'Opel', 'Monterey', 'Terepjáró'),
+(25, 'Opel', 'Frontera', 'Terepjáró'),
+(26, 'Opel', 'Antara', 'Terepjáró'),
+(27, 'Opel', 'Blitz', 'Haszongépjármű'),
+(28, 'Opel', 'Arena', 'Haszongépjármű'),
+(29, 'Opel', 'Movano', 'Haszongépjármű'),
+(30, 'Opel', 'Vivaro', 'Haszongépjármű'),
+(31, 'Opel', '4/8PS(Doktorwagen)', 'Oldtimer'),
+(32, 'Opel', 'Grand Prix Rennwagen', 'Oldtimer'),
+(33, 'Opel', 'Laubfrosch', 'Oldtimer'),
+(34, 'Opel', 'Doktorwagen', 'Oldtimer'),
+(35, 'Opel', 'RAK', 'Oldtimer'),
+(36, 'Opel', 'P4', 'Oldtimer'),
+(37, 'Opel', 'Kadett I', 'Oldtimer'),
+(38, 'Opel', 'Super 6', 'Oldtimer');
 
 -- --------------------------------------------------------
 
@@ -129,11 +157,11 @@ INSERT INTO `modellek` (`id`, `marka`, `nev`, `kategoria`) VALUES
 --
 
 CREATE TABLE `modelltipusok` (
-  `id` int(11) NOT NULL,
-  `modell` varchar(30) COLLATE utf8_hungarian_ci NOT NULL,
-  `nev` varchar(30) COLLATE utf8_hungarian_ci NOT NULL,
-  `gyartaskezd` int(11) NOT NULL,
-  `gyartasvege` int(11) NOT NULL
+  `id` int(5) NOT NULL,
+  `modell` varchar(30) NOT NULL,
+  `nev` varchar(30) NOT NULL,
+  `gyartaskezd` int(4) NOT NULL,
+  `gyartasvege` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 --
@@ -153,9 +181,9 @@ INSERT INTO `modelltipusok` (`id`, `modell`, `nev`, `gyartaskezd`, `gyartasvege`
 --
 
 --
--- A tábla indexei `felhasznalok`
+-- A tábla indexei `felhasznalo`
 --
-ALTER TABLE `felhasznalok`
+ALTER TABLE `felhasznalo`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -178,45 +206,35 @@ ALTER TABLE `modellek`
 --
 ALTER TABLE `modelltipusok`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `Modell` (`modell`);
+  ADD KEY `modell` (`modell`);
 
 --
 -- A kiírt táblák AUTO_INCREMENT értéke
 --
 
 --
+-- AUTO_INCREMENT a táblához `felhasznalo`
+--
+ALTER TABLE `felhasznalo`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT a táblához `markak`
 --
 ALTER TABLE `markak`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT a táblához `modellek`
 --
 ALTER TABLE `modellek`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT a táblához `modelltipusok`
 --
 ALTER TABLE `modelltipusok`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- Megkötések a kiírt táblákhoz
---
-
---
--- Megkötések a táblához `modellek`
---
-ALTER TABLE `modellek`
-  ADD CONSTRAINT `modellek_ibfk_1` FOREIGN KEY (`marka`) REFERENCES `markak` (`nev`);
-
---
--- Megkötések a táblához `modelltipusok`
---
-ALTER TABLE `modelltipusok`
-  ADD CONSTRAINT `modelltipusok_ibfk_1` FOREIGN KEY (`Modell`) REFERENCES `modellek` (`nev`);
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

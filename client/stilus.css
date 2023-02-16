@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-image: url(cars.jpg);
+    background-image: url(./img/opelbg.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -40,11 +40,8 @@ body {
   #lablec{
     margin-right: 10px;
   }
-  h1, h5{
+  h1, h3, h5{
     text-align: center;
-  }
-  table{
-    margin-left: 33%;
   }
   th{
     border: black solid 3px;

@@ -1,4 +1,4 @@
-<h1>Listák</h1>
+<h3>Opel mellett szintén elterjedt autómárkák Magyarországon</h3>
 <table>
     <thead>
         <tr>
@@ -10,7 +10,7 @@
     </thead>
     <tbody id="lista"></tbody>
 </table>
-<script src="data.js"></script>
+<script src="getData.js"></script>
 <script>
     getData("../server/lista.php",render)
     function render(data){
