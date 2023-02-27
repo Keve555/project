@@ -29,4 +29,4 @@
         <img src="./img/erekord.jpg" alt="Rekord E" title="Rekord E">
     </div>
 </div>
-<p>Az E generáció után abbahagyták a Rekord gyártását. A helyét Az Opel Omega vette át.</p>
+<p id="lent">Az E generáció után abbahagyták a Rekord gyártását. A helyét Az Opel Omega vette át.</p>
