@@ -4,7 +4,7 @@
 <p>1899-től gyártották 1902-ig. Mindössze 65 db készült el belőle. Otto-motorral azaz benzinnel működött ami 1,5 literes azaz majdnem 1500 cm<sup>3</sup>-es volt. A hosszúsága 2,15 méter, a szélessége 1,44 méter és a magassága 1,35 méter, a súlya pedig 520 kg volt.</p>
 <img src="./img/patent.jpg" alt="Opel Patent Motorwagen System Lutzmann" title="Opel Patent Motorwagen System Lutzmann">
 
-<h3>Az első elterjedt modell</h3>
+<h3>Az első elterjedt modell:</h3>
 <h5>Opel Rekord</h5>
 <p>Az előző Opel modellekhez képest, az első népszerűségben áttörést elérő modell a Rekord volt . Körülbelül 10 millió került eladásra. 8 generációja volt:</p>
 <ol>
@@ -19,14 +19,14 @@
 </ol>
 <div class="container">
     <div class="row">
-        <img src="./img/orekord.jpg" alt="">
-        <img src="./img/p1rekord.jpg" alt="">
-        <img src="./img/p2rekord.jpg" alt="">
-        <img src="./img/arekord.jpg" alt="">
-        <img src="./img/brekord.jpg" alt="">
-        <img src="./img/crekord.jpg" alt="">
-        <img src="./img/drekord.jpg" alt="">
-        <img src="./img/erekord.jpg" alt="">
+        <img src="./img/orekord.jpg" alt="Rekord Olimpia" title="Rekord Olimpia">
+        <img src="./img/p1rekord.jpg" alt="Rekord P1" title="Rekord P1">
+        <img src="./img/p2rekord.jpg" alt="Rekord P2" title="Rekord P2">
+        <img src="./img/arekord.jpg" alt="Rekord A" title="Rekord A">
+        <img src="./img/brekord.jpg" alt="Rekord B" title="Rekord B">
+        <img src="./img/crekord.jpg" alt="Rekord C" title="Rekord C">
+        <img src="./img/drekord.jpg" alt="Rekord D" title="Rekord D">
+        <img src="./img/erekord.jpg" alt="Rekord E" title="Rekord E">
     </div>
 </div>
 <p>Az E generáció után abbahagyták a Rekord gyártását. A helyét Az Opel Omega vette át.</p>
