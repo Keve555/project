@@ -3,7 +3,6 @@
         width: 200px;
     }
 </style>
-<h1>Modell</h1>
 <table>
     <thead>
         <tr>
