@@ -1,13 +1,13 @@
 <h1>Modellek</h1>
-<table>
-    <thead>
+<table class="table table-striped text-center">
+    <thead class="thead thead-dark">
         <tr>
             <th>Modell</th>
             <th>Kategória</th>
             <th>&nbsp;</th>
         </tr>
     </thead>
-    <tbody id="modell"></tbody>
+    <tbody id="modell" class="tbody"></tbody>
 </table>
 <script src="getData.js"></script>
 <script>
@@ -20,7 +20,7 @@
         <tr>
             <td>${obj.nev}</td>
             <td>${obj.kategoria}</td>
-            <td id="${obj.id}" onclick="show(this)" class="btn btn-outline-light">Részletek</td>
+            <td id="${obj.id}" onclick="show(this)" class="custom-button">Részletek</td>
         </tr>
         `
         document.getElementById("modell").innerHTML=str

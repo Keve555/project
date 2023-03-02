@@ -3,8 +3,8 @@
         width: 200px;
     }
 </style>
-<table>
-    <thead>
+<table class="table table-striped text-center">
+    <thead class="thead thead-dark">
         <tr>
             <th>Név</th>
             <th>Gyártás kezdete</th>

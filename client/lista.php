@@ -1,6 +1,6 @@
 <h3>Opel mellett szintén elterjedt autómárkák Magyarországon</h3>
-<table>
-    <thead>
+<table class="table table-striped tableFixHead">
+    <thead class="thead thead-dark">
         <tr>
             <th>Név</th>
             <th>Ország</th>
@@ -8,7 +8,7 @@
             <th>Alapítási év</th>
         </tr>
     </thead>
-    <tbody id="lista"></tbody>
+    <tbody id="lista" class="tbody"></tbody>
 </table>
 <script src="getData.js"></script>
 <script>
