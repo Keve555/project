@@ -1,4 +1,4 @@
-<h1>Modellek</h1>
+<h1>Magyarországon elterjedtebb modellek</h1>
 <table class="table table-striped text-center">
     <thead class="thead thead-dark">
         <tr>
