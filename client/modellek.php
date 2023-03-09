@@ -1,4 +1,4 @@
-<h1>Magyarországon elterjedtebb modellek</h1>
+<h3 id="cim">Magyarországon elterjedtebb modellek</h3>
 <table class="table table-striped text-center">
     <thead class="thead thead-dark">
         <tr>
