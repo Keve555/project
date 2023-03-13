@@ -31,11 +31,11 @@
       <table class="w-100" class="egyedtab">
         <tr class="egyedtab">
           <td class="egyedtab">
-            <p id="bal">Feliratkozás a hírlevélre</p>
+            <p id="bal"><a href="index.php?prog=hirlevel.php">Feliratkozás a hírlevélre</a></p>
           </td>
           <td class="egyedtab">,
             <p><a href="index.php?prog=forras.php">Forrás</a></p>
-            <p>Adatvédelmi irányelvek</p>
+            <p><a href="index.php?prog=adatvedelem.php">Adatvédelmi irányelvek</a></p>
           </td>
         </tr>
       </table>
