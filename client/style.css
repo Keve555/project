@@ -106,5 +106,8 @@ body {
     padding: 0px 0px 0px 0px;
   }
   a{
-    color: red;
+    color: blue;
+  }
+  .kozep{
+    text-align: center;
   }
