@@ -6,23 +6,4 @@
 <button onclick="insertUser(event)">Elküld</button>
 </div>
 <p class="msg"></p>
-<script>
-    function insertUser(e) {
-        e.preventDefault();
-        console.log("Küldés");
-        let email=document.getElementById("email").value
-        console.log(email)
-        let formdata=new FormData();
-        formdata.append("email",email);
-        let config={
-            method:"POST",
-            body:formdata
-        }
-        insertData("../server/insertemail.php",config,rendermsg)
-    }
-    function rendermsg(data){
-        console.log(data)
-        document.querySelector(".msg").innerHTML=data.msg
-    }
-    
-</script>
+<script src="hirlevel.js"></script>

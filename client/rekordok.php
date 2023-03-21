@@ -33,12 +33,12 @@
 
 <h3>Az eddigi legnépszerűbb modell:</h3>
 <h5>Opel Astra</h5>
-<p>Az <a href="index.php?prog=modelltipusok.php&id=2">Astrát</a> tartalmazza a modellek rész is a weboldalon, mivel mai napig rengetegen használják. Ennek a modellnek az elődje a Kadett volt egy szintén elterjedt modell..</p>
+<p>Az <a href="index.php?prog=modelltipusok.php&id=2">Astrát</a> tartalmazza a modellek rész is a weboldalon, mivel mai napig rengetegen használják. Ennek a modellnek az elődje a Kadett volt egy szintén elterjedt modell.</p>
 <p>Érdekesség, hogy az Astra modell számozása azért kezdődik F-el, mert a Kadett E-nél lett befejezve.</p>
 
 <h3>A jelenleg legnagyobb végsebességű Opel:</h3>
 <h5>Opel Insignia Sports Tourer OPC</h5>
-<p>Az <a href="index.php?prog=modelltipusok.php&id=4">Insigniát</a> szintén tartalmazza a modellek rész. Az Opel luxus modellje. Több specifikáció is van belőle, de ami elérte a 287 km/h-ás rekord sebességet az a v6-os 2.8 literes OPC volt a maga 325 lóerejével. Az OPC(Opel Performance Center) 1997-től az Opel utcai modellekből való sport verzió megtervezéséért és megalkotásáért felelős. Nekik köszönhető többek közt az Opel astra G, H és Opel Vectra C sport verziói is. Ez elött a GSI töltötte be ezt a szerepet. Az Insignia elődje a Vectra</p>
+<p>Az <a href="index.php?prog=modelltipusok.php&id=4">Insigniát</a> szintén tartalmazza a modellek rész. Az Opel luxus modellje. Több specifikáció is van belőle, de ami elérte a 287 km/h-ás rekord sebességet az a v6-os 2.8 literes OPC volt a maga 325 lóerejével. Az OPC(Opel Performance Center) 1997-től az Opel utcai modellekből való sport verzió megtervezéséért és megalkotásáért felelős. Nekik köszönhető többek közt az Opel astra G, H és Opel Vectra C sport verziói is. Ez elött a GSI töltötte be ezt a szerepet. Az Insignia elődje a Vectra.</p>
 <img src="./img/rekordinsignia.jpg" alt="Steinmetz/Klasen Insignia Sports Tourer OPC" title="Steinmetz/Klasen Insignia Sports Tourer OPC">
 
 <h3>A jelenleg legjobban gyorsuló Opel:</h3>
