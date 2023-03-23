@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2023. Feb 16. 09:42
+-- Létrehozás ideje: 2023. Már 23. 08:47
 -- Kiszolgáló verziója: 10.4.21-MariaDB
 -- PHP verzió: 7.3.30
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Adatbázis: `automodellek`
 --
+CREATE DATABASE IF NOT EXISTS `automodellek` DEFAULT CHARACTER SET utf8 COLLATE utf8_hungarian_ci;
+USE `automodellek`;
 
 -- --------------------------------------------------------
 
@@ -29,10 +31,21 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `felhasznalok` (
   `id` int(11) NOT NULL,
-  `nev` int(11) NOT NULL,
-  `email` int(11) NOT NULL,
-  `jelszo` int(11) NOT NULL
+  `email` varchar(50) COLLATE utf8_hungarian_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+
+--
+-- A tábla adatainak kiíratása `felhasznalok`
+--
+
+INSERT INTO `felhasznalok` (`id`, `email`) VALUES
+(2, 'teszt@gmail.com'),
+(6, 'teszt@gmail.com'),
+(7, 'teszt2@gmail.com'),
+(8, 'teszt2@gmail.com'),
+(9, 'teszt3@gmail.com'),
+(10, 'teszt2@gmail.com'),
+(11, 'vfsxvc');
 
 -- --------------------------------------------------------
 
@@ -68,21 +81,15 @@ INSERT INTO `markak` (`id`, `nev`, `orszag`, `szekhely`, `alapitasiev`) VALUES
 (15, 'Suzuki', 'Japán', 'Sizuoka', 1909),
 (16, 'Toyota', 'Japán', 'Tokió', 1936),
 (19, 'Chevrolet', 'Egyesült államok', 'Detroit', 1911),
-(22, 'Dodge', 'Egyesült államok', 'Auburn Hills', 1900),
 (23, 'Jeep', 'Egyesült államok', 'Toledo', 1941),
 (25, 'Ford', 'Egyesült államok', 'Dearborn', 1903),
-(27, 'Bugatti ', 'Franciaország', 'Molsheim', 1998),
 (28, 'Citroën', 'Franciaország', 'Saint-Ouen-sur-Seine', 1919),
 (29, 'Peugeot', 'Franciaország', 'Sochaux', 1810),
 (30, 'Renault', 'Franciaország', 'Boulogne-Billancourt', 1899),
 (31, 'Alfa Romeo', 'Olaszország', 'Torino', 1910),
 (33, 'Ferrari', 'Olaszország', 'Maranello', 1939),
 (34, 'Fiat', 'Olaszország', 'Lingotto', 1899),
-(35, 'Lamborghini', 'Olaszország', 'Sant\'Agata Bolognese', 1963),
 (41, 'Jaguar', 'Egyesült Királyság', 'Coventry', 1922),
-(44, 'Mini', 'Egyesült Királyság', 'Longbridge', 1969),
-(45, 'Rolls-Royce', 'Egyesült Királyság', 'Goodwood', 1988),
-(46, 'Vauxhall', 'Egyesült Királyság', 'Chalton', 1857),
 (47, 'SEAT', 'Spanyolország', 'Martorell', 1950),
 (48, 'Lada', 'Oroszország', 'Togliatti', 1966),
 (57, 'Škoda', 'Cseh', 'Mladá Boleslav', 1925),
@@ -127,11 +134,10 @@ INSERT INTO `modellek` (`id`, `marka`, `nev`, `kategoria`) VALUES
 --
 
 CREATE TABLE `modelltipusok` (
-  `id` int(11) NOT NULL,
-  `modell` varchar(30) COLLATE utf8_hungarian_ci NOT NULL,
+  `id` int(5) NOT NULL,
   `nev` varchar(30) COLLATE utf8_hungarian_ci NOT NULL,
-  `gyartaskezd` int(11) NOT NULL,
-  `gyartasvege` int(11) NOT NULL,
+  `gyartaskezd` int(4) NOT NULL,
+  `gyartasvege` int(4) NOT NULL,
   `kepurl` varchar(100) COLLATE utf8_hungarian_ci NOT NULL,
   `modellid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
@@ -140,13 +146,34 @@ CREATE TABLE `modelltipusok` (
 -- A tábla adatainak kiíratása `modelltipusok`
 --
 
-INSERT INTO `modelltipusok` (`id`, `modell`, `nev`, `gyartaskezd`, `gyartasvege`, `kepurl`, `modellid`) VALUES
-(1, 'Astra', 'F', 1991, 1998, 'fastra.jpg', 2),
-(2, 'Astra', 'G', 1998, 2004, 'gastra.jpg', 2),
-(3, 'Astra', 'H', 2004, 2009, 'hastra.jpg', 2),
-(4, 'Astra', 'J', 2009, 2015, 'jastra.jpg', 2),
-(5, 'Astra', 'K', 2015, 2022, 'kastra.jpg', 2),
-(6, 'Astra', 'L', 2022, 0, 'lastra.jpg', 2);
+INSERT INTO `modelltipusok` (`id`, `nev`, `gyartaskezd`, `gyartasvege`, `kepurl`, `modellid`) VALUES
+(1, 'F', 1991, 1998, 'fastra.jpg', 2),
+(2, 'G', 1998, 2004, 'gastra.jpg', 2),
+(3, 'H', 2004, 2009, 'hastra.jpg', 2),
+(4, 'J', 2009, 2015, 'jastra.jpg', 2),
+(5, 'K', 2015, 2022, 'kastra.jpg', 2),
+(6, 'L', 2022, 0, 'lastra.jpg', 2),
+(7, 'A', 1982, 1993, 'acorsa.jpg', 1),
+(8, 'B', 1993, 2000, 'bcorsa.jpg', 1),
+(9, 'C', 2000, 2006, 'ccorsa.jpg', 1),
+(10, 'D', 2006, 2015, 'dcorsa.jpg', 1),
+(11, 'E', 2015, 2019, 'ecorsa.jpg', 1),
+(12, 'F', 2019, 0, 'fcorsa.jpg', 1),
+(13, 'A', 1988, 1995, 'avectra.jpg', 3),
+(14, 'B', 1995, 2002, 'bvectra.jpg', 3),
+(15, 'C', 2002, 2010, 'cvectra.jpg', 3),
+(16, 'Insignia', 2008, 0, 'insignia.jpg', 4),
+(17, 'A', 1986, 1994, 'aomega.jpg', 5),
+(18, 'B', 1994, 2004, 'bomega.jpg', 5),
+(19, 'A', 2000, 2007, 'aagila.jpg', 6),
+(20, 'B', 2007, 2014, 'bagila.jpg', 6),
+(21, 'A', 2003, 2010, 'ameriva.jpg', 7),
+(22, 'B', 2010, 2017, 'bmeriva.jpg', 7),
+(23, 'A', 1999, 2005, 'azafira.jpg', 8),
+(24, 'B', 2005, 2014, 'bzafira.jpg', 8),
+(25, 'C', 2011, 2019, 'czafira.jpg', 8),
+(26, 'A', 1994, 2000, 'atigra.jpg', 9),
+(27, 'b', 2004, 2009, 'btigra.jpg', 9);
 
 --
 -- Indexek a kiírt táblákhoz
@@ -178,12 +205,17 @@ ALTER TABLE `modellek`
 --
 ALTER TABLE `modelltipusok`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `Modell` (`modell`),
   ADD KEY `modellid` (`modellid`);
 
 --
 -- A kiírt táblák AUTO_INCREMENT értéke
 --
+
+--
+-- AUTO_INCREMENT a táblához `felhasznalok`
+--
+ALTER TABLE `felhasznalok`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT a táblához `markak`
@@ -201,7 +233,7 @@ ALTER TABLE `modellek`
 -- AUTO_INCREMENT a táblához `modelltipusok`
 --
 ALTER TABLE `modelltipusok`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- Megkötések a kiírt táblákhoz
@@ -211,14 +243,8 @@ ALTER TABLE `modelltipusok`
 -- Megkötések a táblához `modellek`
 --
 ALTER TABLE `modellek`
-  ADD CONSTRAINT `modellek_ibfk_1` FOREIGN KEY (`marka`) REFERENCES `markak` (`nev`);
-
---
--- Megkötések a táblához `modelltipusok`
---
-ALTER TABLE `modelltipusok`
-  ADD CONSTRAINT `modelltipusok_ibfk_1` FOREIGN KEY (`Modell`) REFERENCES `modellek` (`nev`),
-  ADD CONSTRAINT `modelltipusok_ibfk_2` FOREIGN KEY (`modellid`) REFERENCES `modellek` (`id`);
+  ADD CONSTRAINT `modellek_ibfk_1` FOREIGN KEY (`marka`) REFERENCES `markak` (`nev`),
+  ADD CONSTRAINT `modellek_ibfk_2` FOREIGN KEY (`id`) REFERENCES `modelltipusok` (`modellid`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
